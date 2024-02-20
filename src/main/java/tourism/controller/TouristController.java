@@ -35,11 +35,10 @@ public class TouristController {
     /** SHOW ATTRACTION NAME AND DESCRIPTION**/
     @GetMapping(path = "/{name}")
     public String getSpecificAttraction(Model model, @PathVariable String name) {
+        TouristAttraction attraction = service.findUrlName(name);
 
-        List<TouristAttraction> attraction = service.getAllAttractions(); //Viser alle i listen - vi skal have kun name + beskrivelse for hvert enkelte i listen.
-        model.addAttribute("attractions", attraction);
-
-        return "attractions.html";
+        model.addAttribute("attraction", attraction);
+        return "attraction.html";
     }
 
     @PostMapping(path = "/opret")

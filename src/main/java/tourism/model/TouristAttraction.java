@@ -7,14 +7,17 @@ public class TouristAttraction {
     public TouristAttraction(String name, String description) {
         this.name = name;
         this.description = description;
-    }
-
-
-    public String getDescription() {
-        return description;
+        this.urlName = this.name.replace(" ", "-");
+        this.tags = tags;
     }
 
     public String getName() {
         return name;
+    }
+    public String getUrl(){
+        return urlName;
+    }
+    public String getDescription(){ //den bliver brugt
+        return description;
     }
 }

@@ -10,11 +10,11 @@ public class TouristRepository {
     private final ArrayList<TouristAttraction> attractionsList = new ArrayList<>();
 
     public TouristRepository() {
-        attractionsList.add(new TouristAttraction("Tivoli", "Stor forlystelsespark i midten af København."));
-        attractionsList.add(new TouristAttraction("Den Lille Havfrue", "En havfrue på en sten, fra H. C. Andersens kendte eventyr 'Den lille Havfrue'."));
-        attractionsList.add(new TouristAttraction("Djurs Sommerland", "Forlystelsespark for små børn."));
-        attractionsList.add(new TouristAttraction("Glyptoteket", "Kunstmuseum i København."));
-        attractionsList.add(new TouristAttraction("Bakken", "Danmarks ældste forlystelsespark."));
+        attractionsList.add(new TouristAttraction("Tivoli", "Stor forlystelsespark i midten af København.", List.of("Forslystelsespark", "Park", "Spisesteder", "Udendørs")));
+        attractionsList.add(new TouristAttraction("Den Lille Havfrue", "En havfrue på en sten, fra H. C. Andersens kendte eventyr 'Den lille Havfrue'.", List.of("Havfrue", "H.C. Andersen", "Eventyr", "Udendørs")));
+        attractionsList.add(new TouristAttraction("Djurs Sommerland", "Forlystelsespark for børn.", List.of("Forlystelsespark", "Børn", "Park", "Udendørs")));
+        attractionsList.add(new TouristAttraction("Glyptoteket", "Kunstmuseum i København.", List.of("Kunst", "Museum", "Indendørs")));
+        attractionsList.add(new TouristAttraction("Bakken", "Danmarks ældste forlystelsespark.", List.of("Forlystelsespark", "Park", "Udendørs")));
     }
 
     public TouristAttraction addAttraction(TouristAttraction attraction){

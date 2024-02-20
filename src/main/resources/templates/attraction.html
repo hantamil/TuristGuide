@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="dk">
+<head>
+    <meta charset="UTF-8">
+    <title>TuristGuide</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="attraction-div">
+    <span th:text= "${attraction.name + ' ' + attraction.description}"> </span>
+</div>
+<div th:if="${attraction == null}">Attraction not found</div>
+</body>
+</html>
