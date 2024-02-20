@@ -9,7 +9,7 @@ import java.util.ArrayList;
 @Service
 public class TouristService {
 
-    private TouristRepository repository;
+    private final TouristRepository repository;
 
     public TouristService() {
         repository = new TouristRepository();
