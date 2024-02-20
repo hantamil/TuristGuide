@@ -5,7 +5,7 @@
     <title>TuristGuide</title>
 </head>
 <body>
-<div th:each="attraction : ${attractions}">
+<div class="attractions" th:each="attraction : ${attractions}">
     <span th:text="${attraction.name + ' ' + attraction.description}"></span>
 </div>
 </body>
