@@ -4,6 +4,7 @@ import org.springframework.stereotype.Repository;
 import tourism.model.TouristAttraction;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Repository
 public class TouristRepository {

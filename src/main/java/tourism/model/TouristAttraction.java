@@ -1,10 +1,15 @@
 package tourism.model;
 
+import java.util.List;
+
 public class TouristAttraction {
     private final String name;
     private final String description;
+    private final List<String> tags;
+    private String by;
+    private final String urlName;
 
-    public TouristAttraction(String name, String description) {
+    public TouristAttraction(String name, String description, List<String> tags) {
         this.name = name;
         this.description = description;
         this.urlName = this.name.replace(" ", "-");

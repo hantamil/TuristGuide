@@ -41,25 +41,25 @@ public class TouristController {
         return "attraction.html";
     }
 
-    @PostMapping(path = "/opret")
-    public ResponseEntity<TouristAttraction> postAttraction(@RequestBody TouristAttraction attraction) {
+    @PostMapping(path = "/create")
+    public String postAttraction(TouristAttraction attraction) {
         TouristAttraction addAttraction = service.postAttraction(attraction);
-        return new ResponseEntity<TouristAttraction>(addAttraction, HttpStatus.OK);
+        return "create.html";
     }
 
-    @PutMapping(path = "/{name}/ret")
-    public ResponseEntity<TouristAttraction> putAttraction(@RequestBody TouristAttraction attraction) {
+    @PutMapping(path = "/{name}/update")
+    public String putAttraction(@RequestBody TouristAttraction attraction) {
         TouristAttraction updateAttraction = service.putAttractions(attraction);
         if (updateAttraction!=null)
-            return new ResponseEntity<TouristAttraction>(updateAttraction, HttpStatus.OK);
+            return "update.html";
         else
-            return new ResponseEntity<TouristAttraction>(new TouristAttraction(null, "Ikke fundet"), HttpStatus.NOT_FOUND);
+            return "HVAD SKAL DER STÅ HERINDE?!??!?!??!?!?!?!?!?!??!?!?!?!?!"; //hJÆLP !
     }
 
 
-    @DeleteMapping("/{name}/slet")
-    public ResponseEntity<TouristAttraction> deleteAttraction(@RequestBody String name) {
+    @DeleteMapping("/{name}/delete")
+    public String deleteAttraction(@RequestBody String name) {
         TouristAttraction deleteAttraction = service.deleteAttraction(name);
-        return new ResponseEntity<TouristAttraction>(deleteAttraction, HttpStatus.OK);
+        return "delete.html";
     }
 }
