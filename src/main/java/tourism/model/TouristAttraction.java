@@ -1,8 +1,8 @@
 package tourism.model;
 
 public class TouristAttraction {
-    String name;
-    String description;
+    private final String name;
+    private final String description;
 
     public TouristAttraction(String name, String description) {
         this.name = name;
