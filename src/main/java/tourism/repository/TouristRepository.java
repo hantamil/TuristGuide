@@ -18,6 +18,24 @@ public class TouristRepository {
         attractionsList.add(new TouristAttraction("Bakken", "Danmarks ældste forlystelsespark.", List.of("Forlystelsespark", "Park", "Udendørs")));
     }
 
+    public TouristAttraction findName(String name){
+        for (TouristAttraction touristAttraction : attractionsList){
+            if (touristAttraction.getName().contains(name)){
+                return touristAttraction;
+            }
+        }
+        return null;
+    }
+
+    public TouristAttraction findUrlName(String urlName){
+        for (TouristAttraction touristAttraction : attractionsList){
+            if (touristAttraction.getUrl().equalsIgnoreCase(urlName)){
+                return touristAttraction;
+            }
+        }
+        return null;
+    }
+
     public TouristAttraction addAttraction(TouristAttraction attraction){
         attractionsList.add(attraction);
         return attraction;

@@ -41,6 +41,12 @@ public class TouristController {
         return "attraction.html";
     }
 
+    @GetMapping("/{name}/tags") //TODO - de forskellige kategorier
+    public String getTags(){
+
+        return "tags.html";
+    }
+
     @PostMapping(path = "/create")
     public String postAttraction(TouristAttraction attraction) {
         TouristAttraction addAttraction = service.postAttraction(attraction);

@@ -5,7 +5,6 @@ h1 {
 body{
     font-family: Verdana, serif;
     font-style: italic;
-    background-color: powderblue;
 }
 h1{
     text-align: center;
@@ -13,7 +12,6 @@ h1{
 }
 h3{
     text-align: center;
-    border: 2px solid black;
 }
 .bombo{
     text-align: center;

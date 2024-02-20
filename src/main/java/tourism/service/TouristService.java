@@ -32,4 +32,11 @@ public class TouristService {
 
     }
 
+    public TouristAttraction findName(String name){
+        return repository.findName(name);
+    }
+    public TouristAttraction findUrlName(String urlName){
+        return repository.findUrlName(urlName);
+    }
+
 }
