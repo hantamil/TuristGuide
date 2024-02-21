@@ -9,10 +9,11 @@ public class TouristAttraction {
     private String by;
     private final String urlName;
 
-    public TouristAttraction(String name, String description, List<String> tags) {
+    public TouristAttraction(String name, String description,String by, List<String> tags) {
         this.name = name;
         this.description = description;
         this.urlName = this.name.replace(" ", "-");
+        this.by = by;
         this.tags = tags;
     }
 
