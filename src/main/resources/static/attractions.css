@@ -1,0 +1,133 @@
+h1 {
+    text-align: center;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    color: #182E46;
+    margin-top: 200px;
+    font-style: normal;
+}
+
+body{
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-style: italic;
+}
+
+h3{
+    text-align: center;
+    font-style: normal;
+    color: #182E46;
+}
+.attraction-span{
+    text-align: center;
+}
+
+.header-img {
+    position: static;
+    justify-content: center;
+    align-items: center;
+
+    padding-bottom: 10px;
+
+}
+
+.create-text-input {
+    width: calc(100% - 130px); /* Adjust the width based on label width - gpt sagde det her og det virker aner ik hvad det gør*/
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+.create-form {
+    max-width: 400px; /*hvor lang inputboxen ska være*/
+    margin: 0 auto; /*det gør så den er i midten af siden*/
+}
+
+.create-form-label {
+    display: inline-block;
+    width: 120px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.form-group{
+    margin-bottom: 10px;
+
+}
+
+p {
+    text-align: right;
+    color: dimgray;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 40%;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+}
+
+td, th {
+    border: 0px solid black;
+    text-align: center;
+    padding: 4px;
+}
+
+table th:not(:last-child),
+table td:not(:last-child) {
+    border-right: 1px solid black;
+}
+
+table tr:not(:last-child) > th,
+table tr:not(:last-child) > td {
+    border-bottom: 1px solid black;
+}
+
+table tr:last-child > th:first-child,
+table tr:last-child > td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+table tr:last-child > th:last-child,
+table tr:last-child > td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #89B2D7;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.button1 {
+    background-color: #182E46;
+}
+
+a {
+    color: inherit;
+}
+
+@media screen {
+    footer {
+        color: dimgray;
+        position: fixed;
+        bottom: 20px;
+        right: 5px;
+    }
+}
+
+label {
+    text-align: center;
+}
+

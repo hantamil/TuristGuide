@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>TuristGuide</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/images.css">
+    <link rel="stylesheet" href="/attractions.css">
 </head>
 <body>
-<div class="attraction-div">
-    <h1 th:text= "${attraction.name}" ></h1>
-    <br>
+<div align="center" class="attraction-div">
+    <h1 fontstyle="normal" th:text= "${attraction.name}" ></h1>
      <span th:text="${attraction.description}"> </span>
 </div>
 <div th:if="${attraction == null}">Attraction not found</div>
 </body>
+<footer>
+    <a th:href="@{'/attractions'}">Gå tilbage</a>
+</footer>
 </html>

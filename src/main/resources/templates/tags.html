@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Tags</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/images.css">
+    <link rel="stylesheet" href="/attractions.css">
 </head>
 <body>
 <!-- Det her skal gøres flot men det virker nu :) -->
@@ -11,5 +12,8 @@
     <span th:text= "${tags}"> </span>
 </div>
 <div th:if="${tags == null}">Tags not found</div>
+<footer>
+    <a th:href="@{'/attractions'}">Gå tilbage</a>
+</footer>
 </body>
 </html>

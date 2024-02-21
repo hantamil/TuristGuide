@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Create</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/images.css">
+    <link rel="stylesheet" href="/attractions.css">
 </head>
 <body>
 <h1>Tilføj turistattraktion</h1> <br>
 <form class="create-form" action="attractions/create">
     <div class="form-group">
-        <label class="create-form-label" for="name">Navn:</label>
+        <label class="create-form-label" for="name">Den nye attraktions navn:</label>
         <input class="create-text-input" type="text" id="name"><br>
     </div>
     <div class="form-group">
-        <label class="create-form-label" for="description">Beskrivelse:</label>
+        <label class="create-form-label" for="description">Beskrivelse af attraktionen:</label>
         <input class="create-text-input" type="text" id="description">
     </div>
 
 </form>
+<footer>
+    <a th:href="@{'/attractions'}">Gå tilbage</a>
+</footer>
 </body>
 </html>
