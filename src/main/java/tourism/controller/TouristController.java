@@ -1,6 +1,9 @@
 package tourism.controller;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
+import org.springframework.web.server.ResponseStatusException;
 import tourism.model.TouristAttraction;
 import tourism.service.TouristService;
 import org.springframework.stereotype.Controller;
@@ -17,13 +20,13 @@ public class TouristController {
         this.service = service;
     }
 
-    @GetMapping("")
+   /* @GetMapping("")
     public String welcomePage(){
         return "index.html";
-    }
+    }*/
     
     /**SHOW ALL ATTRACTIONS**/
-    @GetMapping("/all")
+    @GetMapping("")
     public String allAttractions(Model model){
         List<TouristAttraction> attractionList = service.getAllAttractions();
         model.addAttribute("attractions", attractionList);
@@ -58,11 +61,12 @@ public class TouristController {
         TouristAttraction updateAttraction = service.putAttractions(attraction);
         if (updateAttraction!=null)
             return "update.html";
-        else
-            return "HVAD SKAL DER STÅ HERINDE?!??!?!??!?!?!?!?!?!??!?!?!?!?!"; //hJÆLP !
+        else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND); // virker ikke :c -mici
+        }
+            //return "HVAD SKAL DER STÅ HERINDE?!??!?!??!?!?!?!?!?!??!?!?!?!?!"; //hJÆLP !
         //den skal ikke returne en html fil tror jeg(lassse)
     }
-
 
     @DeleteMapping("/{name}/delete")
     public String deleteAttraction(@RequestBody String name) {
