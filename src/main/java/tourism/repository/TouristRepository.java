@@ -29,7 +29,7 @@ public class TouristRepository {
 
     public TouristAttraction findUrlName(String urlName){
         for (TouristAttraction touristAttraction : attractionsList){
-            if (touristAttraction.getUrl().equalsIgnoreCase(urlName)){
+            if (touristAttraction.getUrlName().equalsIgnoreCase(urlName)){
                 return touristAttraction;
             }
         }

@@ -20,7 +20,7 @@ public class TouristAttraction {
     public String getName() {
         return name;
     }
-    public String getUrl(){
+    public String getUrlName(){
         return urlName;
     }
     public String getDescription(){ //den bliver brugt

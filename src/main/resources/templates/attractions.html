@@ -56,12 +56,11 @@
         <td>
            <span class="attraction-span" th:text="${attraction.name}"></span>
         </td>
-
         <td>
         <span class="attraction-span" th:text="${attraction.description}"></span>
         </td>
         <td>
-            <button class="button button1" onclick="alert('Her skal der komme tags frem!')">Tags</button>
+            <a th:href="@{'/attractions/' + ${attraction.urlName} + '/tags'}" class="button button1">Tags</a>
         </td>
     </tr>
     </div>
