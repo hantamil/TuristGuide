@@ -36,10 +36,10 @@ public class TouristRepository {
         return null;
     }
 
-    public TouristAttraction getTags(String tags) {
-        for (TouristAttraction attractionTags : attractionsList){
-            if (attractionTags.getTags().contains(tags)){
-                return attractionTags;
+    public TouristAttraction getAttractionFromTag(String tag) {
+        for (TouristAttraction attractionTag : attractionsList){
+            if (attractionTag.getTags().contains(tag)){
+                return attractionTag;
             }
         }
         return null;
