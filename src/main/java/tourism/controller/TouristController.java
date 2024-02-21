@@ -39,9 +39,10 @@ public class TouristController {
         return "attraction.html";
     }
 
-    @GetMapping("/{name}/tags") //TODO - de forskellige kategorier
-    public String getTags(Model model, @PathVariable String tags){
-        TouristAttraction attractionTags = service.getAttractionFromTag(tags);
+    @GetMapping("/{name}/tags")
+    public String getTags(Model model, @PathVariable String name){
+        TouristAttraction attraction = service.findUrlName(name);
+        List<String> attractionTags = attraction.getTags();
         model.addAttribute("tags", attractionTags);
         return "tags.html";
     }
@@ -59,6 +60,7 @@ public class TouristController {
             return "update.html";
         else
             return "HVAD SKAL DER STÅ HERINDE?!??!?!??!?!?!?!?!?!??!?!?!?!?!"; //hJÆLP !
+        //den skal ikke returne en html fil tror jeg(lassse)
     }
 
 

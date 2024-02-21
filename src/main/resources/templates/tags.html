@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-<!-- Det her skal fikses og ved ikke hvordan???? -->
+<!-- Det her skal gøres flot men det virker nu :) -->
 <div class="attractionTags-div">
     <span th:text= "${tags}"> </span>
 </div>
-<div th:if="${attractionTags == null}">Tags not found</div>
+<div th:if="${tags == null}">Tags not found</div>
 </body>
 </html>
