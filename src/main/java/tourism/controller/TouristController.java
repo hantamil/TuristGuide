@@ -47,9 +47,9 @@ public class TouristController {
         return "tags.html";
     }
 
-    @PostMapping(path = "/create")
-    public String postAttraction(TouristAttraction attraction) {
-        TouristAttraction addAttraction = service.postAttraction(attraction);
+    @GetMapping(path = "/create")
+    public String postAttraction() {
+        //TouristAttraction addAttraction = service.postAttraction(attraction);
         return "create.html";
     }
 
