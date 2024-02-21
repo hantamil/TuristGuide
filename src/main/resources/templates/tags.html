@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Tags</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-
+<!-- Det her skal fikses og ved ikke hvordan???? -->
+<div class="attractionTags-div">
+    <span th:text= "${tags}"> </span>
+</div>
+<div th:if="${attractionTags == null}">Tags not found</div>
 </body>
 </html>

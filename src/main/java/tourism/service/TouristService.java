@@ -5,6 +5,7 @@ import tourism.repository.TouristRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class TouristService {
@@ -17,6 +18,10 @@ public class TouristService {
 
     public ArrayList<TouristAttraction> getAllAttractions()  {
         return repository.getAttractionsList();
+    }
+
+    public TouristAttraction getTags(String tags) {
+        return repository.getTags(tags);
     }
 
     public TouristAttraction postAttraction(TouristAttraction attraction) {

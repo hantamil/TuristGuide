@@ -36,6 +36,14 @@ public class TouristRepository {
         return null;
     }
 
+    public TouristAttraction getTags(String tags) {
+        for (TouristAttraction attractionTags : attractionsList){
+            if (attractionTags.getTags().contains(tags)){
+                return attractionTags;
+            }
+        }
+        return null;
+    }
 
     public TouristAttraction addAttraction(TouristAttraction attraction){
         attractionsList.add(attraction);

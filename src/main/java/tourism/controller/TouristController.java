@@ -40,8 +40,9 @@ public class TouristController {
     }
 
     @GetMapping("/{name}/tags") //TODO - de forskellige kategorier
-    public String getTags(){
-
+    public String getTags(Model model, @PathVariable String tags){
+        TouristAttraction attractionTags = service.getTags(tags);
+        model.addAttribute("tags", attractionTags);
         return "tags.html";
     }
 

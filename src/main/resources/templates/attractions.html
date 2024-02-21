@@ -3,7 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>TuristGuide</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 40%;
+        }
+
+        td, th {
+            border: 1px solid black;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: powderblue;
+        }
+    </style>
 </head>
+
+<body>
+<table>
+    <tr>
+        <th>Attraktion</th>
+        <th>Beskrivelse</th>
+        <th>Tags</th>
+    </tr>
+    <div class="attractions" th:each="attraction : ${attractions}">
+    <tr>
+        <td>
+           <span class="attraction-span" th:text="${attraction.name}"></span>
+        </td>
+
+        <td>
+        <span class="attraction-span" th:text="${attraction.description}"></span>
+        </td>
+        <td>
+            <button type="button" onclick="alert('Her skal der komme tags frem!')">Tags</button>
+        </td>
+    </tr>
+</table>
+<!--
 <body>
 <div class="attractions" th:each="attraction : ${attractions}">
     <span class="attraction-span" th:text="${attraction.name + ' ' + attraction.description}"></span>
@@ -11,5 +50,6 @@
 <div class="header-img">
     <img src="skyline.png" alt="All Attractions Image">
 </div>
+-->
 </body>
 </html>

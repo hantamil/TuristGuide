@@ -26,4 +26,8 @@ public class TouristAttraction {
     public String getDescription(){ //den bliver brugt
         return description;
     }
+
+    public List<String> getTags() {
+        return tags;
+    }
 }
