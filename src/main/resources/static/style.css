@@ -22,10 +22,8 @@ h3{
 
 .header-img {
     position: static;
-    justify-content: center;
-    align-items: center;
-
     padding-bottom: 10px;
+    margin: 0 auto;
 
 }
 
@@ -100,18 +98,18 @@ tr:nth-child(even) {
 .button {
     border: none;
     color: white;
-    padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
     cursor: pointer;
     border-radius: 10px;
+    background-color: #182E46;
 }
 
-.button1 {
-    background-color: #182E46;
+.tags-button {
+    padding: 15px 32px;
+    font-size: 16px;
+    margin: 4px 2px;
 }
 
 a {
@@ -129,5 +127,21 @@ a {
 
 label {
     text-align: center;
+}
+
+.go-back-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    margin: 4px 2px;
+    position: absolute;
+    top: 70%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+
+.create-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    margin: 4px 2px;
 }
 

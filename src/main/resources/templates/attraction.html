@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <title>TuristGuide</title>
     <link rel="stylesheet" href="/images.css">
-    <link rel="stylesheet" href="/attractions.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
+<style>
+</style>
 <body>
 <div align="center" class="attraction-div">
     <h1 fontstyle="normal" th:text= "${attraction.name}" ></h1>
@@ -13,7 +15,7 @@
 </div>
 <div th:if="${attraction == null}">Attraction not found</div>
 </body>
+<button onclick="history.back()" class="button go-back-button">Gå tilbage</button>
 <footer>
-    <a th:href="@{'/attractions'}">Gå tilbage</a>
 </footer>
 </html>

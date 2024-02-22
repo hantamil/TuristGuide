@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>TuristGuide</title>
     <link rel="stylesheet" href="/images.css">
-    <link rel="stylesheet" href="/attractions.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
@@ -36,12 +36,14 @@
             <span class="attraction-span" th:text="${attraction.description}"></span>
             </td>
             <td>
-                <a th:href="@{'/attractions/' + ${attraction.urlName} + '/tags'}" class="button button1">Tags</a>
+                <a th:href="@{'/attractions/' + ${attraction.urlName} + '/tags'}" class=" button tags-button">Tags</a>
             </td>
         </tr>
     </div>
 </table>
-
+<button>
+    <a  style="text-decoration: none" class="button create-button" th:href="@{'/create'}">Tilføj attraktion</a>
+</button>
 <footer>
     <p>Kontakt os på:</p>
     <a href="mailto:info@touristguiden.dk">E-Mail</a>
