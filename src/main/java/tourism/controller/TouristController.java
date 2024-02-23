@@ -64,15 +64,20 @@ public class TouristController {
         return "redirect:/attractions";
     }
 
-    @PutMapping(path = "/{name}/update")
-    public String putAttraction(@RequestBody TouristAttraction attraction) {
-        TouristAttraction updateAttraction = service.putAttractions(attraction);
+    @GetMapping("/{name}/edit")
+    public String editAttraction() {
+    return "update.html";
+    }
+
+    @PostMapping(path = "/update")
+    public String updateAttraction(TouristAttraction attraction) {
+        TouristAttraction updateAttraction = service.updateAttraction(attraction);
         if (updateAttraction!=null)
             return "update.html";
         else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND); // virker ikke :c -mici
+            return null; // virker ikke :c -mici
         }
-            //return "HVAD SKAL DER STÅ HERINDE?!??!?!??!?!?!?!?!?!??!?!?!?!?!"; //hJÆLP !
+        //"HVAD SKAL DER STÅ HERINDE?!??!?!??!?!?!?!?!?!??!?!?!?!?!"; //hJÆLP !
         //den skal ikke returne en html fil tror jeg(lassse)
     }
 
