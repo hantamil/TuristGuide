@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns: th="http://www.thymeleaf.org" lang="dk">
+<html xmlns:th="http://www.thymeleaf.org" lang="dk">
 <head>
     <meta charset="UTF-8">
     <title>Tags</title>
@@ -7,10 +7,20 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-<!-- Det her skal gøres flot men det virker nu :) -->
-<div class="attractionTags-div">
-    <span th:text= "${tags}"> </span>
+<table>
+    <tr>
+        <th>
+            <h3>Tags</h3>
+        </th>
+    </tr>
+    <div class="attractionTags-div" th:each=" tag : ${tags}">
+    <tr>
+        <td>
+        <span th:text= "${tag}"></span>
+        </td>
+    </tr>
 </div>
+</table>
 <div th:if="${tags == null}">Tags not found</div>
 <button onclick="history.back()" class="button go-back-button">Gå tilbage</button>
 <footer>
