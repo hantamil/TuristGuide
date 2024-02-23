@@ -23,7 +23,7 @@ public class TouristService {
         return repository.getAttractionFromTag(tag);
     }
 
-    public TouristAttraction postAttraction(TouristAttraction attraction) {
+    public TouristAttraction addAttraction(TouristAttraction attraction) {
         return  repository.addAttraction(attraction);
     }
 

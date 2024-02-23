@@ -6,14 +6,14 @@ public class TouristAttraction {
     private final String name;
     private final String description;
     private final List<Tags> tags;
-    private String by;
+    private String city;
     private final String urlName;
 
-    public TouristAttraction(String name, String description,String by, List<Tags> tags) {
+    public TouristAttraction(String name, String description, String city, List<Tags> tags) {
         this.name = name;
         this.description = description;
         this.urlName = this.name.replace(" ", "-");
-        this.by = by;
+        this.city = city;
         this.tags = tags;
     }
 
@@ -29,5 +29,9 @@ public class TouristAttraction {
 
     public List<Tags> getTags() {
         return tags;
+    }
+
+    public String getCity(){
+        return city;
     }
 }

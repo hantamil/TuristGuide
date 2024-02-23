@@ -10,6 +10,8 @@ import java.util.List;
 @Repository
 public class TouristRepository {
     private final ArrayList<TouristAttraction> attractionsList = new ArrayList<>();
+    private final List<String> cityList = List.of("København", "Odense", "Århus", "Aalborg", "Randers");
+
 
     public TouristRepository() {
         attractionsList.add(new TouristAttraction("Tivoli", "Stor forlystelsespark i midten af København.","København", List.of(Tags.FORLYSTELSESPARK, Tags.UDENDØRS, Tags.BØRN)));
@@ -77,5 +79,8 @@ public class TouristRepository {
 
     public ArrayList<TouristAttraction> getAttractionsList() {
         return attractionsList;
+    }
+    public List<String> getCityList(){
+        return cityList;
     }
 }
