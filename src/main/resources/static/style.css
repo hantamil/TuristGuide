@@ -39,14 +39,12 @@ h3{
 }
 
 .create-form-label {
-    display: inline-block;
     width: 120px;
     margin-right: 10px;
-    vertical-align: middle;
 }
 
 .form-group{
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 
 }
 
