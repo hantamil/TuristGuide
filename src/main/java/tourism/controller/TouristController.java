@@ -55,7 +55,7 @@ public class TouristController {
         //TouristAttraction addAttraction = service.postAttraction(attraction);
         return "create.html";
     }
-    @PostMapping(path = "/save")
+    @PostMapping(path = "/create")
     public void postAttraction(){
         //et eller andet der saver det
     }
