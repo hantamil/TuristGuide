@@ -1,9 +1,9 @@
 package tourism.controller;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.server.ResponseStatusException;
+import tourism.model.Tags;
 import tourism.model.TouristAttraction;
 import tourism.service.TouristService;
 import org.springframework.stereotype.Controller;
@@ -45,15 +45,19 @@ public class TouristController {
     @GetMapping("/{name}/tags")
     public String getTags(Model model, @PathVariable String name){
         TouristAttraction attraction = service.findUrlName(name);
-        List<String> attractionTags = attraction.getTags();
+        List<Tags> attractionTags = attraction.getTags();
         model.addAttribute("tags", attractionTags);
         return "tags.html";
     }
 
     @GetMapping(path = "/create")
-    public String postAttraction() {
+    public String createAttractionPage() {
         //TouristAttraction addAttraction = service.postAttraction(attraction);
         return "create.html";
+    }
+    @PostMapping(path = "/save")
+    public void postAttraction(){
+        //et eller andet der saver det
     }
 
     @PutMapping(path = "/{name}/update")

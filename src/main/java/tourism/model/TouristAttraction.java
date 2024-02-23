@@ -5,11 +5,11 @@ import java.util.List;
 public class TouristAttraction {
     private final String name;
     private final String description;
-    private final List<String> tags;
+    private final List<Tags> tags;
     private String by;
     private final String urlName;
 
-    public TouristAttraction(String name, String description,String by, List<String> tags) {
+    public TouristAttraction(String name, String description,String by, List<Tags> tags) {
         this.name = name;
         this.description = description;
         this.urlName = this.name.replace(" ", "-");
@@ -27,7 +27,7 @@ public class TouristAttraction {
         return description;
     }
 
-    public List<String> getTags() {
+    public List<Tags> getTags() {
         return tags;
     }
 }

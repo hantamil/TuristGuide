@@ -1,6 +1,7 @@
 package tourism.repository;
 
 import org.springframework.stereotype.Repository;
+import tourism.model.Tags;
 import tourism.model.TouristAttraction;
 
 import java.util.ArrayList;
@@ -11,11 +12,11 @@ public class TouristRepository {
     private final ArrayList<TouristAttraction> attractionsList = new ArrayList<>();
 
     public TouristRepository() {
-        attractionsList.add(new TouristAttraction("Tivoli", "Stor forlystelsespark i midten af København.","København", List.of("Forslystelsespark", "Park", "Spisesteder", "Udendørs")));
-        attractionsList.add(new TouristAttraction("Den Lille Havfrue", "En havfrue på en sten, fra H. C. Andersens kendte eventyr 'Den lille Havfrue'.", "København", List.of("Havfrue", "H.C. Andersen", "Eventyr", "Udendørs")));
-        attractionsList.add(new TouristAttraction("Djurs Sommerland", "Forlystelsespark for børn.", "Nimtofte", List.of("Forlystelsespark", "Børn", "Park", "Udendørs")));
-        attractionsList.add(new TouristAttraction("Glyptoteket", "Kunstmuseum i København.","København", List.of("Kunst", "Museum", "Indendørs")));
-        attractionsList.add(new TouristAttraction("Bakken", "Danmarks ældste forlystelsespark.","Klampenborg", List.of("Forlystelsespark", "Park", "Udendørs")));
+        attractionsList.add(new TouristAttraction("Tivoli", "Stor forlystelsespark i midten af København.","København", List.of(Tags.FORLYSTELSESPARK, Tags.UDENDØRS, Tags.BØRN)));
+        attractionsList.add(new TouristAttraction("Den Lille Havfrue", "En havfrue på en sten, fra H. C. Andersens kendte eventyr 'Den lille Havfrue'.", "København", List.of(Tags.UDENDØRS, Tags.KUNST)));
+        attractionsList.add(new TouristAttraction("Djurs Sommerland", "Forlystelsespark for børn.", "Nimtofte", List.of(Tags.UDENDØRS, Tags.FORLYSTELSESPARK,Tags.BØRN)));
+        attractionsList.add(new TouristAttraction("Glyptoteket", "Kunstmuseum i København.","København", List.of(Tags.KUNST,Tags.MUSEUM,Tags.INDENDØRS)));
+        attractionsList.add(new TouristAttraction("Bakken", "Danmarks ældste forlystelsespark.","Klampenborg", List.of(Tags.UDENDØRS,Tags.PARK,Tags.FORLYSTELSESPARK)));
     }
 
     public TouristAttraction findName(String name){
