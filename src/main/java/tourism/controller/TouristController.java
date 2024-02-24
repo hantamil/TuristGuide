@@ -54,15 +54,15 @@ public class TouristController {
 
     @GetMapping(path = "/create")
     public String createAttractionPage(Model model) {
-        TouristAttraction touristAttraction = new TouristAttraction();
         List<Tags> tagsList = new ArrayList<>(Arrays.asList(Tags.values())); //alle tags
+
         model.addAttribute("cityList", service.getCitylist());
         model.addAttribute("tags", tagsList);
-        model.addAttribute("touristAttraction", touristAttraction);
+        model.addAttribute("touristAttraction", new TouristAttraction());
         return "create";
     }
     @PostMapping(path = "/create")
-    public String postAttraction(@ModelAttribute("touristAttraction") TouristAttraction touristAttraction){
+    public String postAttraction(@ModelAttribute TouristAttraction touristAttraction){ //DET HER VIRKER IKKE FORDI AT DER ER TOSTRING PÅ TAGS ENUM
         service.addAttraction(touristAttraction);
         return "redirect:/attractions";
     }
