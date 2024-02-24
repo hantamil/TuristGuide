@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Tilføj turistattraktion</h1> <br>
-<form th:action="@{/create}" th:object="${touristAttraction}" class="create-form" method="post">
+<form th:action="@{/attractions/create}" th:object="${touristAttraction}" class="create-form" method="post">
     <div class="form-group">
         <label class="create-form-label" for="name">Den nye attraktions navn:</label>
         <input class="create-text-input" type="text" id="name" th:field="*{name}"><br>
@@ -18,18 +18,16 @@
         <input class="create-text-input" type="text" id="description" th:field="*{description}">
     </div>
     <div class="form-group">
-        <label>
+        <label> by:
             <select th:field="*{city}">
                 <option value="">Select</option>
-                <option th:each="city : ${cityList}" th:value="${city}" th:text="${city}">="Select</option>
+                <option th:each="city : ${cityList}" th:value="${city}" th:text="${city}"></option>
             </select>
         </label>
     </div>
     <div class="form-group">
-        <div th:each="tag : ${tags}">
-            <label>
-                <input type="checkbox" th:field="*{tags}" th:value="${tag}" th:text="${tag.name}"/>
-            </label>
+        <div id="tags">
+            <input type="checkbox" th:field="*{tags}" th:each="tag : ${tags}" th:value="${tag}" th:text="${tag}">
         </div>
     </div>
     <button type="submit">Submit</button>

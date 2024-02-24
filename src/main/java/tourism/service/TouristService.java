@@ -5,6 +5,7 @@ import tourism.repository.TouristRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class TouristService {
@@ -43,4 +44,7 @@ public class TouristService {
         return repository.findUrlName(urlName);
     }
 
+    public List<String> getCitylist(){
+        return repository.getCityList();
+    }
 }

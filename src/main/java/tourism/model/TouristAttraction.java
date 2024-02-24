@@ -3,11 +3,13 @@ package tourism.model;
 import java.util.List;
 
 public class TouristAttraction {
-    private final String name;
-    private final String description;
-    private final List<Tags> tags;
+    private String name;
+    private String description;
+    private List<Tags> tags;
     private String city;
-    private final String urlName;
+    private String urlName;
+
+    public TouristAttraction(){} //det her er for /create til at virke
 
     public TouristAttraction(String name, String description, String city, List<Tags> tags) {
         this.name = name;
@@ -33,5 +35,21 @@ public class TouristAttraction {
 
     public String getCity(){
         return city;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setTags(List<Tags> tags) {
+        this.tags = tags;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 }

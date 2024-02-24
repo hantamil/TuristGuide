@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -53,14 +54,16 @@ public class TouristController {
 
     @GetMapping(path = "/create")
     public String createAttractionPage(Model model) {
-        TouristAttraction touristAttraction = new TouristAttraction("","", "", new ArrayList<>());
+        TouristAttraction touristAttraction = new TouristAttraction();
+        List<Tags> tagsList = new ArrayList<>(Arrays.asList(Tags.values())); //alle tags
+        model.addAttribute("cityList", service.getCitylist());
+        model.addAttribute("tags", tagsList);
         model.addAttribute("touristAttraction", touristAttraction);
-        return "create.html";
+        return "create";
     }
     @PostMapping(path = "/create")
     public String postAttraction(@ModelAttribute("touristAttraction") TouristAttraction touristAttraction){
-        service.addAttraction(new TouristAttraction(touristAttraction.getName(), touristAttraction.getDescription(), touristAttraction.getCity(), touristAttraction.getTags()));
-
+        service.addAttraction(touristAttraction);
         return "redirect:/attractions";
     }
 
