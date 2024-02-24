@@ -16,7 +16,7 @@
     <div class="attractionTags-div" th:each=" tag : ${tags}">
     <tr>
         <td>
-        <span th:text= "${tag}"></span>
+        <span th:text= "${tag.getDisplayValue()}"></span>
         </td>
     </tr>
 </div>
