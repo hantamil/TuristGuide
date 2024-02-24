@@ -1,8 +1,6 @@
 package tourism.controller;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.ui.Model;
-import org.springframework.web.server.ResponseStatusException;
 import tourism.model.Tags;
 import tourism.model.TouristAttraction;
 import tourism.service.TouristService;
@@ -22,11 +20,6 @@ public class TouristController {
         this.service = service;
     }
 
-   /* @GetMapping("")
-    public String welcomePage(){
-        return "index.html";
-    }*/
-    
     /**SHOW ALL ATTRACTIONS**/
     @GetMapping("")
     public String allAttractions(Model model){

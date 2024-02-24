@@ -39,7 +39,7 @@ public class TouristRepository {
         return null;
     }
 
-    public TouristAttraction getAttractionFromTag(String tag) {
+    public TouristAttraction getAttractionFromTag(String tag) { //TODO skal laves om fordi vi nu bruger enum
         for (TouristAttraction attractionTag : attractionsList){
             if (attractionTag.getTags().contains(tag)){
                 return attractionTag;

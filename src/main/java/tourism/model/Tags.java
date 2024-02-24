@@ -14,11 +14,11 @@ public enum Tags {
 
     private final String displayValue;
 
-    private Tags(String displayValue) {
+    Tags(String displayValue) {
         this.displayValue = displayValue;
     }
 
-    public String getDisplayValue() {
+    public String getDisplayValue() { //bliver brugt i create.html
         return displayValue;
     }
 
