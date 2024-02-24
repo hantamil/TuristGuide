@@ -29,7 +29,7 @@
         <div id="tags">
             <label th:each="tag : ${T(tourism.model.Tags).values()}" class="checkbox">
                 <input type="checkbox" th:field="*{tags}" th:value="${tag}" />
-                <span th:text="${tag}"></span>
+                <span th:text="${tag.getDisplayValue()}"></span>
             </label>
         </div>
     </div>
