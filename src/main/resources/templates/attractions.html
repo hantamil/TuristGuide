@@ -37,7 +37,7 @@
             </td>
             <td>
                 <a th:href="@{'/attractions/' + ${attraction.urlName} + '/tags'}" class=" button tags-button">Tags</a>
-                <a th:href="@{'/attractions/{name}/edit'}" class="button update-delete-button">Opdater</a>
+                <a th:href="@{'/attractions/' + ${attraction.urlName} + '/edit'}" class="button update-delete-button">Opdater</a>
                 <a th:href="@{'/attractions/delete'}" class="button update-delete-button">Delete</a>
             </td>
         </tr>
