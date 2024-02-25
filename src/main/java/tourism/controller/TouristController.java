@@ -69,7 +69,7 @@ public class TouristController {
     public String updateAttraction(TouristAttraction attraction) {
         TouristAttraction updateAttraction = service.updateAttraction(attraction);
         if (updateAttraction!=null)
-            return "update.html";
+            return "redirect:/attractions";
         else {
             return null; // virker ikke :c -mici
         }
