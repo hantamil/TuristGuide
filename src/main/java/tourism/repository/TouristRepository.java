@@ -39,13 +39,14 @@ public class TouristRepository {
         return null;
     }
 
-    public TouristAttraction getAttractionFromTag(Tags tag) { //TODO skal laves om fordi vi nu bruger enum
+    public TouristAttraction getAttractionFromTag(Tags tag) {
+        List<TouristAttraction> matchingAttraction = new ArrayList<>();
         for (TouristAttraction attraction : attractionsList){
             if (attraction.getTags().contains(tag)){
-                return attraction;
+                matchingAttraction.add(attraction);
             }
         }
-        return null;
+        return matchingAttraction;
     }
 
     public TouristAttraction postAttraction(TouristAttraction attraction){
