@@ -39,7 +39,7 @@ public class TouristRepository {
         return null;
     }
 
-    public TouristAttraction getAttractionFromTag(Tags tag) {
+    public List<TouristAttraction> getAttractionFromTag(Tags tag) {
         List<TouristAttraction> matchingAttraction = new ArrayList<>();
         for (TouristAttraction attraction : attractionsList){
             if (attraction.getTags().contains(tag)){

@@ -21,7 +21,7 @@ public class TouristService {
         return repository.getAttractionsList();
     }
 
-    public TouristAttraction getAttractionFromTag(String tag) {
+    public List<TouristAttraction> getAttractionFromTag(String tag) {
         Tags enumTag = Tags.valueOf(tag.toUpperCase());
         return repository.getAttractionFromTag(enumTag);
     }
