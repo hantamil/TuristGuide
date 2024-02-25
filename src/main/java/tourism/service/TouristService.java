@@ -22,8 +22,13 @@ public class TouristService {
     }
 
     public List<TouristAttraction> getAttractionFromTag(String tag) {
-        Tags enumTag = Tags.valueOf(tag.toUpperCase());
-        return repository.getAttractionFromTag(enumTag);
+        try {
+            Tags enumTag = Tags.valueOf(tag);
+            return repository.getAttractionFromTag(enumTag);
+        }
+        catch (IllegalArgumentException e) {
+            return null;
+        }
     }
 
     public TouristAttraction addAttraction(TouristAttraction attraction) {
