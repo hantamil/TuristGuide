@@ -57,25 +57,27 @@ public class TouristController {
         return "create";
     }
     @PostMapping(path = "/create")
-    public String postAttraction(@ModelAttribute TouristAttraction touristAttraction){ //DET HER VIRKER IKKE FORDI AT DER ER TOSTRING PÅ TAGS ENUM
+    public String postAttraction(@ModelAttribute TouristAttraction touristAttraction){
         service.addAttraction(touristAttraction);
         return "redirect:/attractions";
     }
 
     @GetMapping("/{name}/edit")
-    public String editAttraction(Model model) { //Skal fikses ligesom create
+    public String editAttraction(Model model, @PathVariable String name) { //Skal fikses ligesom create
         List<String> cityList = service.getCitylist();
         List<Tags> tagsList = new ArrayList<>(Arrays.asList(Tags.values())); //alle tags
 
+        model.addAttribute("touristAttraction" ,service.findUrlName(name));
         model.addAttribute("cityList",cityList);
         model.addAttribute("tags", tagsList);
-        return "update.html";
+        return "update";
     }
 
     @PostMapping(path = "/update")
     public String updateAttraction(TouristAttraction attraction) {
         service.updateAttraction(attraction);
-            return "redirect:/attractions";
+
+        return "redirect:/attractions";
     }
 
     /*@PostMapping(path = "/update")
