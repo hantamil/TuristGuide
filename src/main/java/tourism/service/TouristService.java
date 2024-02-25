@@ -1,5 +1,6 @@
 package tourism.service;
 
+import tourism.model.Tags;
 import tourism.model.TouristAttraction;
 import tourism.repository.TouristRepository;
 import org.springframework.stereotype.Service;
@@ -21,7 +22,8 @@ public class TouristService {
     }
 
     public TouristAttraction getAttractionFromTag(String tag) {
-        return repository.getAttractionFromTag(tag);
+        Tags enumTag = Tags.valueOf(tag.toUpperCase());
+        return repository.getAttractionFromTag(enumTag);
     }
 
     public TouristAttraction addAttraction(TouristAttraction attraction) {
@@ -34,7 +36,6 @@ public class TouristService {
 
     public TouristAttraction deleteAttraction(String name){
         return repository.deleteAttraction(name);
-
     }
 
     public TouristAttraction findName(String name){

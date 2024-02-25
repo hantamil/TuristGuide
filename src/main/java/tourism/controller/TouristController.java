@@ -38,10 +38,13 @@ public class TouristController {
     }
 
     @GetMapping("/{name}/tags")
-    public String getTags(Model model, @PathVariable String name){
-        TouristAttraction attraction = service.findUrlName(name);
+    public String getTags(String tag){
+        // Model model, @PathVariable String name
+        /*TouristAttraction attraction = service.findUrlName(name);
         List<Tags> attractionTags = attraction.getTags();
-        model.addAttribute("tags", attractionTags);
+        model.addAttribute("tags", attractionTags);*/
+
+        service.getAttractionFromTag(tag);
         return "tags.html";
     }
 
@@ -51,7 +54,7 @@ public class TouristController {
 
         model.addAttribute("cityList", service.getCitylist());
         model.addAttribute("tags", tagsList);
-        model.addAttribute("touristAttraction", new TouristAttraction());
+        //model.addAttribute("touristAttraction", new TouristAttraction());
         return "create";
     }
     @PostMapping(path = "/create")
@@ -62,7 +65,7 @@ public class TouristController {
 
     @GetMapping("/{name}/edit")
     public String editAttraction() {
-    return "update.html";
+        return "update.html";
     }
 
     @PostMapping(path = "/update")
@@ -71,10 +74,8 @@ public class TouristController {
         if (updateAttraction!=null)
             return "redirect:/attractions";
         else {
-            return null; // virker ikke :c -mici
+            return null;
         }
-        //"HVAD SKAL DER STÅ HERINDE?!??!?!??!?!?!?!?!?!??!?!?!?!?!"; //hJÆLP !
-        //den skal ikke returne en html fil tror jeg(lassse)
     }
 
     @DeleteMapping("/{name}/delete")

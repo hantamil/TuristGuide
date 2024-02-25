@@ -104,7 +104,7 @@ tr:nth-child(even) {
 }
 
 .tags-button {
-    padding: 15px 32px;
+    padding: 10px 40px;
     font-size: 16px;
     margin: 4px 2px;
 }
@@ -140,5 +140,11 @@ label {
     padding: 10px 20px;
     font-size: 14px;
     margin: 4px 2px;
+    position: relative;
 }
 
+.update-delete-button {
+    font-size: 12px;
+    margin: 4px 2px;
+    padding: 5px 10px;
+}
