@@ -53,7 +53,7 @@ public class TouristController {
 
         model.addAttribute("cityList", service.getCitylist());
         model.addAttribute("tags", tagsList);
-        //model.addAttribute("touristAttraction", new TouristAttraction());
+        model.addAttribute("touristAttraction", new TouristAttraction()); //det her skal være der
         return "create";
     }
     @PostMapping(path = "/create")
