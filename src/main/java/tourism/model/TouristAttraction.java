@@ -9,7 +9,9 @@ public class TouristAttraction {
     private String city;
     private String urlName;
 
-    public TouristAttraction(){} //det her er for /create til at virke
+    public TouristAttraction(){
+        //det her er for /create til at virke
+    }
 
     public TouristAttraction(String name, String description, String city, List<Tags> tags) {
         this.name = name;

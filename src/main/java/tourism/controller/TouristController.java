@@ -63,10 +63,11 @@ public class TouristController {
     }
 
     @GetMapping("/{name}/edit")
-    public String editAttraction(Model model) {
+    public String editAttraction(Model model) { //Skal fikses ligesom create
+        List<String> cityList = service.getCitylist();
         List<Tags> tagsList = new ArrayList<>(Arrays.asList(Tags.values())); //alle tags
 
-        model.addAttribute("cityList", service.getCitylist());
+        model.addAttribute("cityList",cityList);
         model.addAttribute("tags", tagsList);
         return "update.html";
     }
