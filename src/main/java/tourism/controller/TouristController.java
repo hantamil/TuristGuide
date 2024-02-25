@@ -64,11 +64,21 @@ public class TouristController {
     }
 
     @GetMapping("/{name}/edit")
-    public String editAttraction() {
+    public String editAttraction(Model model) {
+        List<Tags> tagsList = new ArrayList<>(Arrays.asList(Tags.values())); //alle tags
+
+        model.addAttribute("cityList", service.getCitylist());
+        model.addAttribute("tags", tagsList);
         return "update.html";
     }
 
     @PostMapping(path = "/update")
+    public String updateAttraction(TouristAttraction attraction) {
+        service.updateAttraction(attraction);
+            return "redirect:/attractions";
+    }
+
+    /*@PostMapping(path = "/update")
     public String updateAttraction(TouristAttraction attraction) {
         TouristAttraction updateAttraction = service.updateAttraction(attraction);
         if (updateAttraction!=null)
@@ -76,7 +86,7 @@ public class TouristController {
         else {
             return null;
         }
-    }
+    }*/
 
     @DeleteMapping("/{name}/delete")
     public String deleteAttraction(@RequestBody String name) {

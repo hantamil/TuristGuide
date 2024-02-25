@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns: th="http://www.thymeleaf.org" lang="dk">
+<html xmlns:th="http://www.thymeleaf.org" lang="dk">
 <head>
     <meta charset="UTF-8">
     <title>Create</title>
@@ -8,17 +8,37 @@
 </head>
 <body>
 <h1>Tilføj turistattraktion</h1> <br>
-<form class="create-form" action="attractions/create">
-    <div class="form-group">
-        <label class="create-form-label" for="name">Den nye attraktions navn:</label>
-        <input class="create-text-input" type="text" id="name"><br>
-    </div>
-    <div class="form-group">
-        <label class="create-form-label" for="description">Beskrivelse af attraktionen:</label>
-        <input class="create-text-input" type="text" id="description">
-    </div>
+<form th:action="@{/attractions/create}" th:object="${touristAttraction}" class="create-form" method="post">
+    <form class="create-form" action="attractions/create">
+        <div class="form-group">
+            <label class="create-form-label" for="name">Den nye attraktions navn:</label>
+            <input class="create-text-input" type="text" id="name" th:field="*{name}"><br>
+            <input class="create-text-input" type="text" id="name"><br>
+        </div>
+        <div class="form-group">
+            <label class="create-form-label" for="description">Beskrivelse af attraktionen:</label>
+            <input class="create-text-input" type="text" id="description" th:field="*{description}">
+        </div>
+        <div class="form-group">
+            <label> by:
+                <select th:field="*{city}">
+                    <option value="">Select</option>
+                    <option th:each="city : ${cityList}" th:value="${city}" th:text="${city}"></option>
+                </select>
+            </label>
+        </div>
+        <div class="form-group">
+            <div id="tags">
+                <label th:each="tag : ${T(tourism.model.Tags).values()}" class="checkbox">
+                    <input type="checkbox" th:field="*{tags}" th:value="${tag}" />
+                    <span th:text="${tag.getDisplayValue()}"></span>
+                </label>
+            </div>
+            <input class="create-text-input" type="text" id="description">
+        </div>
 
-
+        <button type="submit">Submit</button>
+    </form>
 </form>
 <button onclick="history.back()" class="button go-back-button">Gå tilbage</button>
 <footer>
