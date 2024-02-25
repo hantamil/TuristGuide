@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-<h1>Tilføj turistattraktion</h1> <br>
-<form th:action="@{/attractions/create}" th:object="${touristAttraction}" class="update-form" method="post">
+<h1>Opdatér informationer</h1> <br>
+<form th:action="@{/attractions/create}" th:object="${touristAttraction}" class="form-group create-form" method="post">
     <!--<div class="form-group"> Skal vist ikke bruges, da man ikke skal kunne ændre navn
         <label class="update-form-label" for="name">Den nye attraktions navn:</label>
         <input class="update-text-input" type="text" id="name" th:field="*{name}"><br>
