@@ -12,24 +12,24 @@
     <form class="create-form" action="attractions/create">
         <div class="form-group">
             <label class="create-form-label" for="name">Den nye attraktions navn:</label>
-            <input class="create-text-input" type="text" id="name" th:field="*{name}"><br>
+            <input class="create-text-input" type="text" id="name" th:field="*{name}" required><br>
         </div>
         <div class="form-group">
             <label class="create-form-label" for="description">Beskrivelse af attraktionen:</label>
-            <input class="create-text-input" type="text" id="description" th:field="*{description}">
+            <input class="create-text-input" type="text" id="description" th:field="*{description}" required>
         </div>
         <div class="form-group">
             <label> by:
                 <select th:field="*{city}">
                     <option value="">Select</option>
-                    <option th:each="city : ${cityList}" th:value="${city}" th:text="${city}"></option>
+                    <option th:each="city : ${cityList}" th:value="${city}" th:text="${city}" ></option>
                 </select>
             </label>
         </div>
         <div class="form-group">
             <div id="tags">
                 <label th:each="tag : ${T(tourism.model.Tags).values()}" class="checkbox">
-                    <input type="checkbox" th:field="*{tags}" th:value="${tag}" />
+                    <input type="checkbox" th:field="*{tags}" th:value="${tag}"/>
                     <span th:text="${tag.getDisplayValue()}"></span>
                 </label>
             </div>

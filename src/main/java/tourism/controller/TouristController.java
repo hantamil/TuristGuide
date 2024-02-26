@@ -76,7 +76,7 @@ public class TouristController {
     @PostMapping(path = "/update")
     public String updateAttraction(TouristAttraction attraction) {
         service.updateAttraction(attraction);
-            return "redirect:/attractions";
+        return "redirect:/attractions";
     }
 
     /*@PostMapping(path = "/update")
